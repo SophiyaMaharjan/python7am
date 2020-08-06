@@ -31,4 +31,34 @@ def register():
         print(error)
     finally:
         handle.close()
-register()
+
+def login():
+    username = input("entere uname :")
+    password = getpass.getpass("enter password")
+    get_users_data = open('record.txt','r').readlines()
+    user = []
+    print (user)
+    for user in get_users_data:
+        users.append(user.split())
+    total_users = len(users)
+    print(total_users)
+    increment = 0
+    login_success = 0
+    while increment< total_users:
+        get_username = users[increment][0]
+        get_password = users[increment][1]
+        if username == get_username and password == get_password:
+            login_success =1
+        increment +=1
+    
+    if login_success == 1:
+        print('welcome'+username)
+    else:
+        print("username and password not match")
+
+message = input("Do you have an account y/n : ")
+
+if message == 'y':
+    login()
+else:
+    register()

@@ -1,3 +1,4 @@
+# decorator
 # def get_doc(anyfunction):
 #     def inner():
 #         return f'{anyfunction.__doc__}'
@@ -7,8 +8,9 @@
 # def test():
 #     """this is test function"""
 #     pass
-# print(test())
+# print(test())  ##if we print function without bracket then it gives the memory location of the function
 
+#decorator
 def validation(function):
     def check(x, y):
         if x==0:
